@@ -67,7 +67,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	homeData.GetNavbar(w)
 
 	// Create and execute template
-	t, err := template.ParseFiles("blog.html")
+	t, err := template.ParseFiles("home.html")
 	if err != nil {
 		log.Fatal(err)
 	}
