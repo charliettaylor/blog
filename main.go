@@ -47,7 +47,6 @@ func (data *BlogData) GetNavbar(w http.ResponseWriter) {
 func main() {
 	mux := http.NewServeMux()
 
-	// Define route with wildcard
 	mux.HandleFunc("GET /", homeHandler)
 	mux.HandleFunc("GET /{name}", pageHandler)
 	fileServer := http.FileServer(http.Dir("./static"))
@@ -77,7 +76,6 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	homeData := HomeData{Pages: data}
 	homeData.GetNavbar(w)
 
-	// Create and execute template
 	t, err := template.ParseFiles("home.html")
 	if err != nil {
 		log.Fatal(err)
@@ -120,7 +118,6 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Extract metadata
 	metaData := meta.Get(context)
 	title := "Untitled"
 	date := "01/01/20XX"
@@ -131,7 +128,6 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 		date = d
 	}
 
-	// Create and execute template
 	t, err := template.ParseFiles("./templates/blog.html")
 	if err != nil {
 		log.Fatal(err)
@@ -174,7 +170,6 @@ func parseMarkdownMetadata(dir string) ([]PageData, error) {
 
 		metaData := meta.Get(context)
 
-		// Extract title and date, convert to string if present
 		title, _ := metaData["title"].(string)
 		date, _ := metaData["date"].(string)
 
