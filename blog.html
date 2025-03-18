@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlie's Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="/static/main.css">
+</head>
+
+<body>
+    {{.Navbar}}
+    <section class="hero is-link">
+        <div class="hero-body">
+            <p class="title">Charlie's Blog (Chog)</p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="box is-shadowless">
+                <p>This is my blog, trying to make my own thing and make it pretty, content will be subpar.</p>
+            </div>
+            <nav class="panel is-shadowless">
+                <p class="panel-heading has-background-primary">Posts</p>
+
+                {{range .Pages}}
+                <a class="panel-block" href="/{{.Filename}}">
+                    <span class="panel-icon">
+                        <i class="fas fa-book" aria-hidden="true"></i>
+                    </span>
+                    {{.Title}} - {{.Date}}
+                </a>
+                {{end}}
+            </nav>
+        </div>
+    </section>
+</body>
+
+</html>

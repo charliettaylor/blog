@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+:root {
+    --bulma-family-primary: Sora;
+
+    --bulma-primary-rgb: 82, 203, 119;
+    --bulma-primary: hsla(var(--bulma-primary-h), var(--bulma-primary-s), var(--bulma-primary-l), 1);
+    --bulma-primary-base: hsla(var(--bulma-primary-h), var(--bulma-primary-s), var(--bulma-primary-l), 1);
+    --bulma-primary-h: 138deg;
+    --bulma-primary-s: 54%;
+    --bulma-primary-l: 56%;
+
+
+    --bulma-link-rgb: 202, 46, 85;
+    --bulma-link: hsla(var(--bulma-link-h), var(--bulma-link-s), var(--bulma-link-l), 1);
+    --bulma-link-base: hsla(var(--bulma-link-h), var(--bulma--s), var(--bulma-link-l), 1);
+    --bulma-link-h: 345deg;
+    --bulma-link-s: 65%;
+    --bulma-link-l: 49%;
+
+    --bulma-box-shadow: none;
+    --bulma-box-link-active-shadow: none;
+}
